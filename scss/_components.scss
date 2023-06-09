@@ -1,0 +1,36 @@
+@use "_variables" as *;
+
+.left-flex {
+    margin-right: auto;
+}
+.right-flex {
+    margin-left: auto;
+}
+.logo {
+    width: 137px;
+}
+.main-btn {
+    background-color: $orange;
+    color: $white;
+    border: none;
+    border-radius: 10px;
+    padding: 17px 0;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0px 8px 10px $paleOrange;
+    width: 100%;
+    cursor: pointer;
+    transition: $mainTransition;
+}
+.main-btn:hover {
+    background-color: $opacityOrange;
+}
+.btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+ul {
+    list-style: none;
+    margin: 0;
+}

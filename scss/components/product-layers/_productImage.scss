@@ -1,0 +1,204 @@
+@use "../../variables" as *;
+@use "../../mixins" as *;
+
+.product  {
+    .product-image {
+        @include min-width("md") {
+            margin-bottom: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 350px;
+        }
+        @include min-width("x-lg") {
+            width: 420px;
+        }
+        @include min-width("xx-lg") {
+            width: 445px;
+        }
+        .seen {
+            position: relative;
+            button.control {
+                background-color: $white;
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 3;
+                &.left {
+                    left: 15px;
+                }
+                &.right {
+                    right: 15px;
+                }
+                img {
+                    width: 9px;
+                    height: 13.5px;
+                    display: block;
+                }
+                @include min-width("md") {
+                    display: none;
+                }
+            }
+            .image {
+                &::before {
+                    content: "Make it bigger";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    border-radius: inherit;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $black;
+                    opacity: 0;
+                    color: $white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 700;
+                }
+                &:not(.seen-image) {
+                    display: none;
+                }
+                &.seen-image {
+                    display: block;
+                    width: 100%;
+                    height: 299px;
+                    cursor: pointer;
+                    pointer-events: none;
+                    position: relative;
+                    @include min-width("md") {
+                        pointer-events: initial;
+                        height: 350px;
+                        border-radius: 10px;
+                        margin-bottom: 20px;
+                    }
+                    @include min-width("x-lg") {
+                        height: 420px;
+                        border-radius: 15px;
+                        margin-bottom: 30px;
+                    }
+                    @include min-width("xx-lg") {
+                        height: 445px;
+                    }
+                }
+                @include min-width("md") {
+                    &:hover::before {
+                        opacity: 0.5;
+                    }
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: inherit;
+                    object-fit: cover;
+                }
+            }
+        }
+        .thumbnails {
+            width: 100%;
+            display: none;
+            gap: 20px;
+            @include min-width("md") {
+                display: flex;
+                justify-content: center;
+            }
+            @include min-width("lg") {
+                justify-content: space-between;
+            }
+            .image {
+                position: relative;
+                cursor: pointer;
+                border-radius: 12px;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: inherit;
+                    transition: $mainTransition;
+                }
+                &:hover::before {
+                    background-color: rgba(255, 255, 255, 0.50);
+                }
+                &.selected {
+                    border: 1px solid $orange;
+                    &::before {
+                        background-color: rgba(255, 255, 255, 0.75);
+                    }
+                }
+                @include min-width("md") {
+                    width: 75px;
+                    height: 75px;
+                }
+                @include min-width("x-lg") {
+                    width: 88px;
+                    height: 88px;
+                }
+                @include min-width("xx-lg") {
+                    width: 92px;
+                    height: 92px;
+                }
+                img {
+                    border-radius: inherit;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .product-full-image {
+        z-index: 99;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        left: 50%;
+        width: 550px;
+        transition: $mainTransition;
+        &.show {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        button.close {
+            margin-bottom: 20px;
+            position: absolute;
+            right: 0;
+            top: -45px;
+        }
+        .seen {
+            button.control {
+                width: 55px;
+                height: 55px;
+                display: flex;
+                &.left {
+                    left: calc(-55px / 2)
+                }
+                &.right {
+                    right: calc(-55px / 2)
+                }
+                img {
+                    width: 13px;
+                    height: 18px;
+                }
+            }
+            .image {
+                &::before {
+                    display: none;
+                    cursor: initial;
+                }
+                &.seen-image {
+                    height: 550px;
+                }
+            }
+        }
+        .thumbnails {
+            justify-content: center;
+        }
+    }
+}

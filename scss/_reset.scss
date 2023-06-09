@@ -1,0 +1,28 @@
+@use "_variables" as * ;
+* {
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+    padding: 0;
+}
+body {
+    font-size: 15px;
+    margin: 0;
+}
+body.overlay::before {
+    content: "";
+    background-color: $opacityBlack;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+ul {
+    list-style: none;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+}

@@ -1,0 +1,23 @@
+@use "../mixins" as *;
+
+.product {
+    display: flex;
+    flex-direction: column;
+    @include min-width("md") {
+        margin: 100px auto;
+        max-width: calc(100vw - ((80px) * 2));
+    }
+    @include min-width("lg") {
+        flex-direction: row;
+        max-width: calc(100vw - ((110px) * 2));
+    }
+    @include min-width("x-lg") {
+        max-width: calc(100vw - ((150px) * 2));
+    }
+    @include min-width("xx-lg") {
+        max-width: calc(100vw - ((200px) * 2));
+    }
+}
+
+@import "product-layers/productImage";
+@import "product-layers/productDetails";

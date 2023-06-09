@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="css/stysle.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+</head>
+<body class="">
+  <div class="navbar">
+    <button class="menu btn" id="open_menu"><img src="images/icon-menu.svg" alt="Menu Icon"></button>
+    <a href=""><img src="images/logo.svg" alt="Logo" class="logo"></a>
+    <ul class="nav-links" id="menu">
+      <li><button class="close btn" id="close_menu"><img src="images/icon-close.svg" alt="Close Icon"></button></li>
+      <li><a href="">Collections</a></li>
+      <li><a href="">Men</a></li>
+      <li><a href="">Women</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+      <div class="cart right-flex">
+        <div class="icon" id="cart_icon">
+          <span class="counter">0</span>
+          <img src="images/icon-cart.svg" alt="Cart Icon">
+        </div>
+        <div class="contents" id="cart_contents">
+          <h5>Cart</h3>
+          <div class="products-cart empty">
+            <!-- <div class="product-cart">
+              <img class="product-cart-image" src="images/image-product-1-thumbnail.jpg" alt="Product Image">
+              <div class="text">
+                <p class="name">Fall Limited Edition Sneakers</p>
+                <p class="price">$125.00 x 3  <b>$375.00</b></span></p>
+              </div>
+              <button class="delete right-flex btn"><img src="images/icon-delete.svg" alt="Delete Icon"></button>
+            </div>
+            <button class="main-btn checkout">Checkout</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="account">
+        <img class="avatar" src="images/image-avatar.png" alt="Avatar Image">
+      </div>
+  </div>
+  <div class="product">
+    <div class="product-image">
+      <div class="seen">
+        <button class="left btn control"><img src="images/icon-previous.svg" alt="Previous Icon"></button>
+        <div class="images">
+          <div class="image seen-image">
+            <img src="images/image-product-1.jpg" alt="">
+          </div>
+          <div class="image">
+            <img src="images/image-product-2.jpg" alt="">
+          </div>
+          <div class="image">
+            <img src="images/image-product-3.jpg" alt="">
+          </div>
+          <div class="image">
+            <img src="images/image-product-4.jpg" alt="">
+          </div>
+        </div>
+        <button class="right btn control"><img src="images/icon-next.svg" alt="Next Icon"></button>
+      </div>
+      <div class="thumbnails">
+        <div class="image selected">
+          <img src="images/image-product-1-thumbnail.jpg" alt="Product 1">
+        </div>
+        <div class="image">
+          <img src="images/image-product-2-thumbnail.jpg" alt="Product 2">
+        </div>
+        <div class="image">
+          <img src="images/image-product-3-thumbnail.jpg" alt="Product 3">
+        </div>
+        <div class="image">
+          <img src="images/image-product-4-thumbnail.jpg" alt="Product 4">
+        </div>
+      </div>
+    </div>
+    <div class="product-full-image product-image">
+      <button class="close btn">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2225 0L21.5571 3.33457L14.3316 10.5553L21.5555 17.7791L18.2209 21.1137L11.0002 13.8883L3.7795 21.1121L0.444931 17.7776L7.66565 10.5569L0.443359 3.33457L3.77793 0L10.9986 7.22229L18.2225 0Z" fill="#FFF"/>
+        </svg>
+      </button>
+      <div class="seen">
+        <button class="left btn control"><img src="images/icon-previous.svg" alt="Previous Icon"></button>
+        <div class="images">
+          <div class="image seen-image">
+            <img src="images/image-product-1.jpg" alt="">
+          </div>
+          <div class="image">
+            <img src="images/image-product-2.jpg" alt="">
+          </div>
+          <div class="image">
+            <img src="images/image-product-3.jpg" alt="">
+          </div>
+          <div class="image">
+            <img src="images/image-product-4.jpg" alt="">
+          </div>
+        </div>
+        <button class="right btn control"><img src="images/icon-next.svg" alt="Next Icon"></button>
+      </div>
+      <div class="thumbnails">
+        <div class="image selected">
+          <img src="images/image-product-1-thumbnail.jpg" alt="Product 1">
+        </div>
+        <div class="image">
+          <img src="images/image-product-2-thumbnail.jpg" alt="Product 2">
+        </div>
+        <div class="image">
+          <img src="images/image-product-3-thumbnail.jpg" alt="Product 3">
+        </div>
+        <div class="image">
+          <img src="images/image-product-4-thumbnail.jpg" alt="Product 4">
+        </div>
+      </div>
+    </div>
+    <div class="details" data-name="Fall Limited Edition Sneakers" data-price="125" data-thumbnail="images/image-product-1-thumbnail.jpg" data-id="H61M">
+      <div class="description">
+        <p class="category">Sneaker Company</p>
+        <h3 class="name">Fall Limited Edition Sneakers</h3>
+        <p class="text">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class="price">
+          <div class="new-amount">
+            <span class="amount">$125.00</span>
+            <span class="discount">50%</span>
+          </div>
+          <div class="old-amount">$250.00</div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="counter">
+          <button class="left-flex btn minus"><img src="images/icon-minus.svg" alt="Minus Icon"></button>
+          <span class="count">0</span>
+          <button class="right-flex btn plus"><img src="images/icon-plus.svg" alt="Plus Icon"></button>
+        </div>
+        <button class="add main-btn">
+          <img src="images/Icon-cart-white.png" alt="Icon cart">
+          <span>Add to cart</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!--
+  Collections
+  Men
+  Women
+  About
+  Contact
+
+  Sneaker Company
+
+  Fall Limited Edition Sneakers
+
+  These low-profile sneakers are your perfect casual wear companion. Featuring a 
+  durable rubber outer sole, they’ll withstand everything the weather can offer.
+
+  $125.00
+  50%
+  $250.00
+
+  -->
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Philopatire</a>.
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

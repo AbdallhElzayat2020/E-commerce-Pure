@@ -1,0 +1,214 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.navbar {
+    height: 68px;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    margin-top: 8px;
+    @include min-width("sm") {
+        padding-left: 18px;
+        padding-right: 18px;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        border-bottom: 1px solid $lightGrayishBlue;
+    }
+    @include min-width("lg") {
+        max-width: calc(100vw - ((100px) * 2));
+    }
+    @include min-width("x-lg") {
+        max-width: calc(100vw - ((120px) * 2));
+    }
+    @include min-width("xx-lg") {
+        max-width: calc(100vw - ((165px) * 2));
+    }
+    .menu {
+        margin-right: 16px;
+        @include min-width("md") {
+            display: none;
+        }
+        img {
+            width: 16px;
+        }
+    }
+    .nav-links {
+        background-color: $white;
+        padding: 24px 25px;
+        position: absolute;
+        left: -100%;
+        width: 250px;
+        display: block;
+        top: 0;
+        height: 100vh;
+        z-index: 100;
+        transition: $mainTransition;
+        @include min-width("md") {
+            margin-left: 58px;
+            display: flex;
+            gap: 32px;
+            padding: 0;
+            position: static;
+            width: auto;
+            height: auto;
+            z-index: 1;
+        }
+        &.open {
+            left: 0;
+        }
+        li {
+            button.close {
+                margin-bottom: 53px;
+                @include min-width("md") {
+                    display: none;
+                }
+                img {
+                    width: 13.44px;
+                }
+            }
+            a {
+                padding-bottom: 30px;
+                line-height: 21px;
+                font-size: 17px;
+                color: $veryDarkBlue;
+                font-weight: 700;
+                transition: $mainTransition;
+                letter-spacing: 0.03em;
+                @include min-width("md") {
+                    color: $grayishBlue;
+                    font-size: 14px;
+                    position: relative;
+                    padding-top: 32px;
+                    padding-bottom: 38px;
+                    border-bottom: 3px solid transparent;
+                    font-weight: 400;
+                    &:hover {
+                        color: $veryDarkBlue;
+                        border-bottom-color: $orange;
+                    }
+                }
+                @include min-width('lg') {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    .cart {
+        @include min-width("sm") {
+            margin-right: 47px;
+        }
+        .icon {
+            position: relative;
+            cursor: pointer;
+            margin-right: 22px;
+            .counter {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                width: 20px;
+                font-size: 10px;
+                font-weight: 700;
+                color: $white;
+                background-color: $orange;
+                border-radius: 5px;
+                text-align: center;
+            }
+            img {
+                width: 21px;
+                @include min-width("sm") {
+                    width: 22px;
+                }
+            }
+        }
+        .contents {
+            display: none;
+            position: absolute;
+            right: 8px;
+            z-index: 10;
+            background-color: $white;
+            top: 84px;
+            width: calc(100% - 16px);
+            border-radius: 10px;
+            min-height: 260px;
+            max-width: 360px;
+            box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.1);
+            @include min-width("md") {
+                right: 90px;
+                top: 90px;
+            }
+            &.open {
+                display: block;
+            }
+            h5 {
+                margin: 0;
+                padding: 20px;
+                border-bottom: 2px solid $lightGrayishBlue;
+                font-size: 15px;
+                line-height: 14px;
+                height: 60px;
+                color: $veryDarkBlue;
+            }
+            .products-cart {
+                min-height: 200px;
+                padding: 25px 24px;
+                position: relative;
+                padding-bottom: calc(54px + 25px);
+                &.empty::before {
+                    content: "Your cart is empty";
+                    position: absolute;
+                    font-weight: 700;
+                    color: $grayishBlue;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 15px;
+                    line-height: 11px;
+                }
+                button.checkout {
+                    position: absolute;
+                    width: calc(100% - (24px * 2));
+                    bottom: 25px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            .product-cart {
+                display: flex;
+                width: 100%;
+                margin-bottom: 20px;
+                img.product-cart-image {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 4px;
+                    margin-right: 16px;
+                }
+                p {
+                    margin: 0;
+                    color: $black;
+                }
+                button img {
+                    width: 14px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+    .account {
+        .avatar {
+            border: 1px solid transparent;
+            transition: $mainTransition;
+            cursor: pointer;
+            width: 24px;
+            &:hover {
+                border-color: $orange;
+                border-radius: 50%;
+            }
+            @include min-width("sm") {
+                width: 50px;
+            }
+        }
+    }
+}
